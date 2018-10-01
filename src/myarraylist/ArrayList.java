@@ -31,7 +31,7 @@ public class ArrayList<Z> {
     public int size() {
         return currentSize;
     }
-//increase list length when current size>len
+//increase list length when current size>=len
     private void increaseLen() {
         Object[] tmp = new Object[(currentSize * 2)+1];
         System.arraycopy(list, 0, tmp, 0, currentSize);
@@ -63,7 +63,7 @@ public class ArrayList<Z> {
 //remove item by index
     public void remove(int index) {
         if (index<0 || index>=currentSize) {
-             throw new RuntimeException("Error: Set index is out of range.");
+             throw new RuntimeException("Error: Remove index is out of range.");
          }
                for (int i=index;i<currentSize;i++)
                {
