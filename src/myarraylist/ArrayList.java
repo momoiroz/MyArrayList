@@ -6,7 +6,7 @@
 package myarraylist;
 //STEP 1: build an array list class
 import java.util.Arrays;
-public class ArrayList<Z> {
+public class ArrayList<T> {
 
     private Object[] list;
     private int currentSize;
@@ -38,7 +38,7 @@ public class ArrayList<Z> {
         list = tmp;
     }
 //add new item to the end of the list
-    public void add(Z item) {
+    public void add(T item) {
         if (currentSize == list.length) {
             increaseLen();
         }
@@ -46,15 +46,15 @@ public class ArrayList<Z> {
         currentSize++;
     }
 //get item by index
-    public Z get(int index) throws RuntimeException{
+    public T get(int index) throws RuntimeException{
         if (index<0 || index>=currentSize) {
             throw new RuntimeException("Error: Get index is out of range.");
         }
-            return (Z) list[index];
+            return (T) list[index];
         
     }
 //set item by index
-    public void set(int index, Z item) {
+    public void set(int index, T item) {
          if (index<0 || index>=currentSize) {
              throw new RuntimeException("Error: Set index is out of range.");
          }
